@@ -1,0 +1,499 @@
+.btn{
+    border: none;
+    color: #a2a9c3;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 100%;
+    background-color: #2e3347;
+}
+
+.btn-active{
+    color: white !important;
+}
+
+input{
+    border-radius: 5px;
+    width: 100%;
+    padding: 3px 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #f1f1f1;
+}
+
+/* login */
+
+.login-container{
+    background-image: url("../public/cloud_1.jpg");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-wrapper > div {
+  width: 300px;
+  background-color: #72869B;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 60px;
+}
+
+.title-login{
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.btn-login{
+    border-radius: 8px;
+    background-color: #051538;
+}
+
+.btn-signup{
+    border-radius: 8px;
+    background-color: #C0BBB5;
+}
+
+.wrong-username-password{
+    color: red;
+}
+
+/* end login */
+
+/* sign up  */
+
+.btn-signup-submit{
+    border-radius: 8px;
+    background-color: #051538;
+}
+
+.btn-back-to-login{
+    border-radius: 8px;
+    background-color: #C0BBB5;  
+}
+
+.signup-container{
+    background-image: url("../public/cloud_1.jpg");
+    height: 100vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signup-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-wrapper > div {
+  width: 300px;
+  background-color: #72869B;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 60px;
+}
+
+/* end sign up  */
+
+/* navbar */
+
+.container-navbar{
+    display: flex;
+    height: 50px;
+    width: 100%;
+    background-color: #2e3347;
+    justify-content: space-around;
+}
+
+.btn-navbar{
+    background-color: #0d6efd;
+}
+
+.btn-navbar-logout{
+    background-color: #ffc107;
+}
+
+@media only screen and (min-width: 768px) {
+    .container-navbar{
+        margin: 40px;
+        padding: 20px;
+        border-radius: 20px;
+        flex-direction: column;
+        width: 100px;
+        height: 29vh;
+    }
+}
+
+/* end navbar */
+
+.img-main{
+    width: 150px;
+    height: auto;
+}
+
+.img-next-7-days{
+    width: 50px;
+    height: auto;
+}
+
+/* profile */
+
+.btn-profile{
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 2px;
+    cursor: pointer;
+    background-color: #0098ff;
+    border-radius: 5px;
+}
+
+.input-profile-disable{
+    color: white;
+    border-color: #4a4c57;
+}
+
+.title-profile{
+    font-size: 30px;
+    font-weight: 550;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+.profile-wrapper {
+    border-radius: 20px;
+    background-color: #2e3347;
+    margin: 15px 5px 15px 5px;
+    padding: 10px 15px 10px 15px;
+}
+
+.wrong-input-profile{
+    color: red;
+    padding-bottom: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+    .title-profile{
+        margin-top: 30px;
+    }
+
+    .profile-wrapper {
+        width: 100%;
+    }
+}
+
+/* end profile */
+
+/* setting */
+.title-setting{
+    font-size: 30px;
+    font-weight: 550;
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+.btn-save-setting{
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 15px 2px;
+    cursor: pointer;
+    background-color: #0098ff;
+    border-radius: 5px;
+}
+
+.temperature-input-wrapper{
+    margin-top: 10px;
+}
+
+select{
+    margin-top: 5px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.setting-container {
+    border-radius: 20px;
+    background-color: #2e3347;
+    /* border: 1px solid red; */
+    margin: 15px 5px 15px 5px;
+    padding: 10px 0 10px 15px;
+}
+
+@media only screen and (min-width: 768px) {
+    .title-setting{
+        margin-top: 30px;
+    }
+
+    .setting-container {
+        width: 100%;
+    }
+}
+
+/* end setting */
+
+/* dashboard */
+.main-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.main-city-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+
+.main-city-wrapper > div{
+    width: 100%;
+}
+
+.main-city-wrapper > div:nth-child(2){
+    padding-bottom: 30px;
+}
+
+.today-container{
+    margin:0 5px 0 5px;    
+}
+
+.today-container > div {
+    margin-top: 15px;
+    border-radius: 20px;
+    background-color: #2e3347;
+    padding-top: 20px;    
+}
+
+.today-container > div:nth-child(2) {
+    height: 25vh;   
+}
+
+.today-container > div:first-child {
+    margin-top: 15px;  
+}
+
+.curr-weather-container{
+    display:flex;
+    justify-content: space-between;
+    height: 30vh;
+}
+
+.curr-weather-container > div {
+    width: 100%;
+    text-align: center;
+}
+
+.curr-weather-container > div:first-child {
+    text-align: left;
+    font-size: 35px;
+    padding-left: 30px;
+}
+
+.curr-weather-container > div:first-child > span:first-child{
+    padding-bottom: 10px;    
+}
+
+.forecast-container{
+    display: flex;
+}
+
+.forecast-container > div {
+    margin: 20px 5px 20px 5px;
+    padding: 20px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: #2e3347;
+}
+
+.content-air-conditions-wrapper{
+    display: flex;
+}
+
+.wrap-content-today-forecast{
+    display: flex;
+    justify-content: space-around;
+    padding-right: 30px;
+}
+
+.today-forecast-wrapper{
+    padding-left: 30px;
+}
+
+.today-forecast-wrapper > span:first-child {
+    font-size: 20px;
+}
+
+.card-today-forecast{
+    border-right: 1px solid #474e6c;
+    width: 100%;
+    text-align: center;
+}
+
+.card-today-forecast:last-child{
+    border: none;
+}
+
+.air-conditions-wrapper{
+    padding-left: 30px;
+}
+
+.air-conditions-wrapper > span:first-child {
+    font-size: 20px;
+}
+
+.main-city-title{
+    font-size: 35px;
+}
+
+.main-region-title{
+    font-size: 15px;
+    color: #a2a9c3;
+}
+
+.main-country-title{
+    font-size: 15px;
+    color: #a2a9c3;
+}
+
+.main-icon-desc{
+    color: #a2a9c3;
+}
+
+.today-forecast-title{
+    padding-bottom: 20px;
+}
+
+.today-forecast-hour{
+    color: #a2a9c3;
+}
+
+.today-forecast-degree{
+    font-weight: 550;
+}
+
+.air-condition-icon-desc{
+    color:#a2a9c3;
+    text-align: left;
+}
+
+.air-condition-value{
+    padding-left: 20px;
+    text-align: left;
+    font-size: 20px;
+}
+
+.air-conditions-detail-wrapper{
+    display: flex;
+    flex-direction: row;
+    margin-right: 30px;
+    padding-bottom: 10px;
+}
+
+.air-conditions-uv-and-wind{
+    width: 100%;
+}
+
+.air-conditions-humidity{
+    width: 100%;
+}
+
+.air-condition-title{
+    padding-bottom: 20px;
+}
+
+.forecast-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-;
+    height: 9vh;
+    border-bottom: 1px solid #474e6c;
+    width: 100%;
+    padding: 5px 0 0 0;
+}
+
+.forecast-card-time{
+    color:#a2a9c3;
+}
+
+.forecast-card-condition-desc{
+    color:#a2a9c3;
+}
+
+.forecast-card-temp{
+    font-weight: 550;
+}
+
+.forecast-title{
+    padding-bottom: 20px;
+}
+
+.forecast-card-container{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    /* align-content: space-around; */
+
+    /* border: 1px solid red; */
+    height: 90%;
+}
+
+.forecast-card-container > div:last-child{
+    border: none;
+}
+
+@media only screen and (min-width: 768px) {
+    .main-container{
+        flex-wrap: wrap;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .today-container{
+        width: 730px;  
+    }
+
+    .forecast-container{
+        display: flex;
+        width: 33%;
+        justify-content: center;
+        margin-left: 10px;
+    }
+
+    .forecast-container > div {
+        margin: 40px 5px 0 5px;
+        padding: 40px;
+        width: 100%;
+        border-radius: 20px;
+        background-color: #2e3347;
+    }
+
+    .today-container > div:first-child {
+        margin-top: 40px;  
+    }
+}
+
+/* end dashboard */
+
