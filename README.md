@@ -2,7 +2,7 @@
 ---
 ## Project preview (for more image preview please see images in preview folder)
 ![alt text](https://github.com/gedePakusadewa/4_weather_web_FE/blob/master/preview/desktop_3.png)
-![alt text](https://github.com/gedePakusadewa/4_weather_web_FE/blob/master/preview/mobile_2.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web_FE/blob/master/preview/mobile_3.png)
 
 # Project Idea: Weather Dashboard
 
