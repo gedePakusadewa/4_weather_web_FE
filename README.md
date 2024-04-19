@@ -1,12 +1,8 @@
 ### This project idea is generated from ChatGPT
 ---
 ## Project desktop preview 
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/1.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/2.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/3.jpg)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/4.png)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/5.png)
-![alt text](https://github.com/gedePakusadewa/4_weather_web/blob/main/6.jpg)
+![alt text](https://github.com/gedePakusadewa/4_weather_web_FE/blob/master/preview/desktop_3.png)
+![alt text](https://github.com/gedePakusadewa/4_weather_web_FE/blob/master/preview/mobile_2.png)
 
 ## Project mobile preview 
 
