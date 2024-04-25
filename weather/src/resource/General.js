@@ -25,7 +25,8 @@ const General = {
     UNIT_CELCIUS:"CELCIUS",
     UNIT_FAHRENHEIT:"FAHRENHEIT",
     WRONG_INPUT_PROFILE:"Wrong format username or email!",
-    BTN_UPDATE:"Update"
+    BTN_UPDATE:"Update",
+    LOGIN_AS_GUEST:"Log In As Guest (demo)",
   };
   
   export default General

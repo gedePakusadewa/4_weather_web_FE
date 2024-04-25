@@ -50,3 +50,5 @@ Key Features:
   Deploy your application on platforms like Heroku, Netlify, or Vercel.
 
 Source API -> https://www.weatherapi.com/
+
+for now just keep it in this way without any update except responsiveness desktop/mobile

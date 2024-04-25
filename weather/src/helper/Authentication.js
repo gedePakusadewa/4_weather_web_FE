@@ -14,8 +14,14 @@ const AuthProvider = ({ children }) => {
     const navigate = useNavigate();
 
     const handleLogin = async (username, password) => {      
-      axios.post(UrlConst.LOGIN, {
-        username, password
+      axios.post({
+        method: 'post',
+        url: UrlConst.LOGIN,
+        data: {
+          username : username,
+          password : password,
+          isDemo : true
+        }
       }).then((res) => {
         setToken(res.data.token);
         navigate('/');
@@ -65,6 +71,25 @@ const AuthProvider = ({ children }) => {
       // removeCookie('token' ,{path:'/'})
       // navigate('/login');
     };
+
+    const handleDemoLogin = () => {
+      axios({
+        method: 'post',
+        url: UrlConst.LOGIN,
+        data: {
+          isDemo : true
+        }
+      })
+      .then((res) => {
+        setToken(res.data.token);
+        navigate('/');
+        setCookie('token', res.data.token, { path: '/' });
+        setIsErrorInput(false)
+      })
+      .catch((err) => {
+        setIsErrorInput(true)
+      })
+    };
   
     const handleSignUp = () => {
       navigate('/signup');
@@ -77,6 +102,7 @@ const AuthProvider = ({ children }) => {
       handleLogout,
       handleSignUp,
       handleSubmitSignUp,
+      handleDemoLogin,
       isErrorInput,
     };
 

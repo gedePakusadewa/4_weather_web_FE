@@ -8,6 +8,7 @@ import "../style.css";
 const LogIn = () =>{
   const context = useContext(AuthContext);
   const [cookies, setCookie] = useCookies(['user']);
+  const [isShowSignUpButton, setIsShowSignUpButton] = useState(false);
 
   const navigate = useNavigate();
 
@@ -58,12 +59,22 @@ const LogIn = () =>{
           >
             {GeneralConst.LOGIN}
           </button>
-          <button
-            className="btn btn-signup" 
-            onClick={()=>context.handleSignUp()}
-          >
-            {GeneralConst.SIGNUP}
-          </button>
+          {isShowSignUpButton && (
+            <button
+              className="btn btn-signup" 
+              onClick={()=>context.handleSignUp()}
+            >
+              {GeneralConst.SIGNUP}
+            </button>
+          )}
+          {isShowSignUpButton === false && (
+            <button
+              className="btn btn-signup"
+              onClick={()=>context.handleDemoLogin()}
+            >
+              {GeneralConst.LOGIN_AS_GUEST}
+            </button>
+          )}
         </div>
       </div>
     </div>

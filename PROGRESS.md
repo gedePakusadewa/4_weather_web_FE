@@ -38,6 +38,11 @@
     - if user sign up, user can login but there is error in dashboard page
       - because new user does not have data in setting table that is used in dashboard
 
+### day 16
+- ~add login as guest in BE and FE~
+- update style login
+  - update font color for login and login as guest
+
 #### Day 15
 - listing bugs from production 
 
