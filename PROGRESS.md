@@ -40,8 +40,9 @@
 
 ### day 16
 - ~add login as guest in BE and FE~
-- update style login
+- ~update style login~
   - update font color for login and login as guest
+- add loading screen in login
 
 #### Day 15
 - listing bugs from production 
