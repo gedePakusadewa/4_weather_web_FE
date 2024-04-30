@@ -40,7 +40,7 @@
 
 ### day 17
 - ~add loading in login~
-- add loading in dashbaord screen
+- ~add loading in dashbaord screen~
 
 ### day 16
 - ~add login as guest in BE and FE~

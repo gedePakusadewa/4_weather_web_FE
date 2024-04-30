@@ -2,8 +2,8 @@ import { AuthContext } from "../App.js";
 import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import GeneralConst from "../resource/General.js"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import GeneralConst from "../resource/General.js";
 import "../style.css";
 
 const LogIn = () =>{

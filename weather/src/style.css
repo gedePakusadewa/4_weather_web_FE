@@ -473,6 +473,12 @@ select{
     border: none;
 }
 
+.dashboard-wait-container {
+    margin-top: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+
 @media only screen and (min-width: 768px) {
     .main-container{
         flex-wrap: wrap;
@@ -501,6 +507,11 @@ select{
 
     .today-container > div:first-child {
         margin-top: 40px;  
+    }
+
+    .dashboard-wait-container {
+        margin-top: 100px;
+        width: 100%;
     }
 }
 

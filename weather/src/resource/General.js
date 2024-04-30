@@ -28,6 +28,7 @@ const General = {
     BTN_UPDATE:"Update",
     LOGIN_AS_GUEST:"Log In As Guest (demo)",
     LOGIN_WAIT_MESSAGE: "Please wait while we are logging you in",
+    DASHBOARD_WAIT_MESSAGE: "Please wait while we are sending you the data",
   };
   
   export default General

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useCookies } from 'react-cookie';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   GetIconWeather,
   GetIconAirCondition,
@@ -7,48 +8,52 @@ import {
   GetIconNextDaysWeather
 } from '../helper/GetIconWeather.js';
 import AirConditionConst from "../resource/AirCondition.js";
-import UrlConst from "../resource/Url.js"
+import UrlConst from "../resource/Url.js";
 import axios from "axios";
 import Navbar from "../component/NavBar.js";
-import GeneralConst from "../resource/General.js"
+import GeneralConst from "../resource/General.js";
 import "../style.css";
 
 const Dashboard = () => {
   const [cookies, setCookie] = useCookies(['user']);
 
-  const [city, setCity] = useState("")
-  const [region, setRegion] = useState("")
-  const [country, setCountry] = useState("")
-  const [temp, setTemp] = useState("")
-  const [condition, setCondition] = useState("")
-  const [uvIndex, setUvIndex] = useState("")
-  const [windSpeed, setWindSpeed] = useState("")
-  const [humidity, setHumidity] = useState("")
-  const [todayForecast, setTodayForecast] = useState(null)
-  const [current6hourForecast, setCurrent6hourForecast] = useState(null)
-  const [currentLocalTime, setCurrentLocalTime] = useState("")
-  const [next7DaysForecast, setNext7DaysForecast] = useState(null)
-  const [currentNext7DaysForecast, setCurrentNext7DaysForecast] = useState(null)
-  const [iconURL, setIconURL] = useState(null)
-  const [unitDegree, setUnitDegree] = useState("") 
+  const [city, setCity] = useState("");
+  const [region, setRegion] = useState("");
+  const [country, setCountry] = useState("");
+  const [temp, setTemp] = useState("");
+  const [condition, setCondition] = useState("");
+  const [uvIndex, setUvIndex] = useState("");
+  const [windSpeed, setWindSpeed] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [todayForecast, setTodayForecast] = useState(null);
+  const [current6hourForecast, setCurrent6hourForecast] = useState(null);
+  const [currentLocalTime, setCurrentLocalTime] = useState("");
+  const [next7DaysForecast, setNext7DaysForecast] = useState(null);
+  const [currentNext7DaysForecast, setCurrentNext7DaysForecast] = useState(null);
+  const [iconURL, setIconURL] = useState(null);
+  const [unitDegree, setUnitDegree] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     getWeatherData()
-  }, [])
+  }, []);
 
   useEffect(() => {
     setCurrent6hourForecast(getCurrentForecast(currentLocalTime, todayForecast))
 
     setCurrentNext7DaysForecast(getNextDaysForecast(currentLocalTime, next7DaysForecast))
 
-  }, [todayForecast])
+  }, [todayForecast]);
   
-  const getWeatherData = async (location) => {    
+  const getWeatherData = async (location) => {
+    setIsLoading(true);
+
     axios({
       method: 'get',
       url: UrlConst.GETWEATHER,
       headers: {'Authorization': "Token " + cookies['token']},
     }).then((res) => {
+      setIsLoading(false);  
 
       setCity(res.data.location.name)
       setRegion(res.data.location.region)
@@ -68,6 +73,9 @@ const Dashboard = () => {
       }else if (res.data.unit_degree === GeneralConst.UNIT_FAHRENHEIT){
         setTemp(res.data.current.temp_f)
       }
+    })      
+    .catch((err) => {
+      setIsLoading(false);
     })
   };
   
@@ -137,75 +145,90 @@ const Dashboard = () => {
         activeNavBar={GeneralConst.DASHBOARD}
       />
       <div className="main-container">
-        <div className="today-container">
-          <div className="curr-weather-container">
-            <div className="main-city-wrapper">
-              <div>
-                <div className="main-city-title">{city}</div>
-                <div className="main-region-title">{region} region</div>
-                <div className="main-country-title">{country}</div>
-              </div>
-              <div>{temp} {getTemperatureUnit(unitDegree)}</div>
+        {isLoading && (
+          <div className="dashboard-wait-container">
+            <div className="">
+              {GeneralConst.DASHBOARD_WAIT_MESSAGE}
             </div>
-            <div>
-              <GetIconWeather
-                condition={condition}
-                iconURL={iconURL}
-              />
-            </div>
+            <div className="">
+              <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
+            </div>            
           </div>
-          <div className="today-forecast-wrapper">
-            <div className="today-forecast-title">{GeneralConst.TODAY_FORECAST}</div>
-            <div className="wrap-content-today-forecast">
-              {current6hourForecast !== null && (current6hourForecast.map(data => {
-                  return(
-                    <GetIconTodayWeather 
-                      hour={data.hour}
-                      iconURL={data.condition.icon}
-                      valueCelcius={data.temp_c}
-                      valueFahrenheit={data.temp_f}
-                      unitDegree={unitDegree}
-                      unitDegreeText={getTemperatureUnit(unitDegree)}
+        )}
+        {isLoading === false && (
+          <>
+            <div className="today-container">
+              <div className="curr-weather-container">
+                <div className="main-city-wrapper">
+                  <div>
+                    <div className="main-city-title">{city}</div>
+                    <div className="main-region-title">{region} region</div>
+                    <div className="main-country-title">{country}</div>
+                  </div>
+                  <div>{temp} {getTemperatureUnit(unitDegree)}</div>
+                </div>
+                <div>
+                  <GetIconWeather
+                    condition={condition}
+                    iconURL={iconURL}
+                  />
+                </div>
+              </div>
+              <div className="today-forecast-wrapper">
+                <div className="today-forecast-title">{GeneralConst.TODAY_FORECAST}</div>
+                <div className="wrap-content-today-forecast">
+                  {current6hourForecast !== null && (current6hourForecast.map(data => {
+                      return(
+                        <GetIconTodayWeather 
+                          hour={data.hour}
+                          iconURL={data.condition.icon}
+                          valueCelcius={data.temp_c}
+                          valueFahrenheit={data.temp_f}
+                          unitDegree={unitDegree}
+                          unitDegreeText={getTemperatureUnit(unitDegree)}
+                        />
+                      )      
+                    })
+                  )}
+                </div>
+              </div>
+              <div className="air-conditions-wrapper">
+                <div className="air-condition-title">{GeneralConst.AIR_CONDITIONS}</div>
+                <div className="air-conditions-detail-wrapper">
+                  <div className="air-conditions-uv-and-wind">
+                    <GetIconAirCondition
+                      condition={AirConditionConst.UV_INDEX}
+                      value={uvIndex}
                     />
-                  )      
-                })
-              )}
-            </div>
-          </div>
-          <div className="air-conditions-wrapper">
-            <div className="air-condition-title">{GeneralConst.AIR_CONDITIONS}</div>
-            <div className="air-conditions-detail-wrapper">
-              <div className="air-conditions-uv-and-wind">
-                <GetIconAirCondition
-                  condition={AirConditionConst.UV_INDEX}
-                  value={uvIndex}
-                />
-                <GetIconAirCondition
-                  condition={AirConditionConst.WIND_SPEED}
-                  value={windSpeed}
-                />
+                    <GetIconAirCondition
+                      condition={AirConditionConst.WIND_SPEED}
+                      value={windSpeed}
+                    />
+                  </div>
+                  <div className="air-conditions-humidity">
+                    <GetIconAirCondition
+                      condition={AirConditionConst.HUMIDITY}
+                      value={humidity}
+                    />
+                  </div>
+                </div>          
               </div>
-              <div className="air-conditions-humidity">
-                <GetIconAirCondition
-                  condition={AirConditionConst.HUMIDITY}
-                  value={humidity}
-                />
-              </div>
-            </div>          
-          </div>
-        </div>
-        <div className="forecast-container">
-          <div>
-            <div className="forecast-title">{GeneralConst.NEXT_7_DAY_FORECAST}</div>
-            <div className="forecast-card-container">
-              <GetIconNextDaysWeather 
-                data={currentNext7DaysForecast}
-                unitDegree={unitDegree}
-                unitDegreeText={getTemperatureUnit(unitDegree)}
-              />
             </div>
-          </div>
-        </div>
+            <div className="forecast-container">
+              <div>
+                <div className="forecast-title">{GeneralConst.NEXT_7_DAY_FORECAST}</div>
+                <div className="forecast-card-container">
+                  <GetIconNextDaysWeather 
+                    data={currentNext7DaysForecast}
+                    unitDegree={unitDegree}
+                    unitDegreeText={getTemperatureUnit(unitDegree)}
+                  />
+                </div>
+              </div>
+            </div>
+          </>
+        )}
+
       </div>
     </>
   )
