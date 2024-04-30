@@ -10,25 +10,30 @@ const AuthProvider = ({ children }) => {
     const [token, setToken] = React.useState(null);
     const [cookies, setCookie, removeCookie] = useCookies(['user']);
     const [isErrorInput, setIsErrorInput] = React.useState(false);
+    const [isShowLogInButtons, setIsShowLogInButtons] = React.useState(true);
 
     const navigate = useNavigate();
 
-    const handleLogin = async (username, password) => {      
-      axios.post({
+    const handleLogin = async (username, password) => {    
+      setIsShowLogInButtons(false);
+
+      axios({
         method: 'post',
         url: UrlConst.LOGIN,
         data: {
           username : username,
           password : password,
-          isDemo : true
+          isDemo : false
         }
       }).then((res) => {
+        setIsShowLogInButtons(true);
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
         setIsErrorInput(false)
       })
       .catch((err) => {
+        setIsShowLogInButtons(true);
         setIsErrorInput(true)
       })
       
@@ -73,6 +78,8 @@ const AuthProvider = ({ children }) => {
     };
 
     const handleDemoLogin = () => {
+      setIsShowLogInButtons(false);
+
       axios({
         method: 'post',
         url: UrlConst.LOGIN,
@@ -81,12 +88,14 @@ const AuthProvider = ({ children }) => {
         }
       })
       .then((res) => {
+        setIsShowLogInButtons(true);
         setToken(res.data.token);
         navigate('/');
         setCookie('token', res.data.token, { path: '/' });
         setIsErrorInput(false)
       })
       .catch((err) => {
+        setIsShowLogInButtons(true);
         setIsErrorInput(true)
       })
     };
@@ -104,6 +113,7 @@ const AuthProvider = ({ children }) => {
       handleSubmitSignUp,
       handleDemoLogin,
       isErrorInput,
+      isShowLogInButtons
     };
 
     // fake API

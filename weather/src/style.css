@@ -71,6 +71,15 @@ input{
     color: red;
 }
 
+.login-wait-message{
+    text-align: center;
+    font-weight: 500;
+}
+
+.login-wait-message-icon{
+    text-align: center;
+}
+
 /* end login */
 
 /* sign up  */

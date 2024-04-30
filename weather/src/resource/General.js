@@ -27,6 +27,7 @@ const General = {
     WRONG_INPUT_PROFILE:"Wrong format username or email!",
     BTN_UPDATE:"Update",
     LOGIN_AS_GUEST:"Log In As Guest (demo)",
+    LOGIN_WAIT_MESSAGE: "Please wait while we are logging you in",
   };
   
   export default General

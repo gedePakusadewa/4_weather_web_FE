@@ -2,6 +2,7 @@ import { AuthContext } from "../App.js";
 import { useCookies } from 'react-cookie';
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import GeneralConst from "../resource/General.js"
 import "../style.css";
 
@@ -53,13 +54,15 @@ const LogIn = () =>{
             name="password"
             onChange={(e)=>{updateForm(e)}}
           /><br />
-          <button
-            className="btn btn-login" 
-            onClick={()=>context.handleLogin(form.username, form.password)}
-          >
-            {GeneralConst.LOGIN}
-          </button>
-          {isShowSignUpButton && (
+          {context.isShowLogInButtons && (
+            <button
+              className="btn btn-login" 
+              onClick={()=>context.handleLogin(form.username, form.password)}
+            >
+              {GeneralConst.LOGIN}
+            </button>
+          )}
+          {(isShowSignUpButton && context.isShowLogInButtons === true) && (
             <button
               className="btn btn-signup" 
               onClick={()=>context.handleSignUp()}
@@ -67,13 +70,23 @@ const LogIn = () =>{
               {GeneralConst.SIGNUP}
             </button>
           )}
-          {isShowSignUpButton === false && (
+          {(isShowSignUpButton === false  && context.isShowLogInButtons === true) && (
             <button
               className="btn btn-signup"
               onClick={()=>context.handleDemoLogin()}
             >
               {GeneralConst.LOGIN_AS_GUEST}
             </button>
+          )}
+          {context.isShowLogInButtons === false && (
+            <>
+              <div className="login-wait-message">
+                {GeneralConst.LOGIN_WAIT_MESSAGE}
+              </div>
+              <div className="login-wait-message-icon">
+                <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
+              </div>            
+            </>
           )}
         </div>
       </div>
