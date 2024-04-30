@@ -29,6 +29,10 @@ const General = {
     LOGIN_AS_GUEST:"Log In As Guest (demo)",
     LOGIN_WAIT_MESSAGE: "Please wait while we are logging you in",
     DASHBOARD_WAIT_MESSAGE: "Please wait while we are sending you the data",
+    WAIT_MESSAGE: "Please wait",
+    SETTING_SAVE_WAIT_MESSAGE:"We are updating your settings, please wait",
+    SETTING_SAVED_MESSAGE: "Settings has been updated.", 
+
   };
   
   export default General

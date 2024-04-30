@@ -147,10 +147,10 @@ const Dashboard = () => {
       <div className="main-container">
         {isLoading && (
           <div className="dashboard-wait-container">
-            <div className="">
+            <div>
               {GeneralConst.DASHBOARD_WAIT_MESSAGE}
             </div>
-            <div className="">
+            <div>
               <FontAwesomeIcon icon="fa-solid fa-spinner" spinPulse />
             </div>            
           </div>

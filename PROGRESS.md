@@ -41,6 +41,9 @@
 ### day 17
 - ~add loading in login~
 - ~add loading in dashbaord screen~
+- ~add loading setting~
+- ~add notification your update has been save~
+- 
 
 ### day 16
 - ~add login as guest in BE and FE~
