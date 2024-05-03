@@ -14,7 +14,7 @@ function Navbar({activeNavBar}) {
       <div>
         <Link to="/">
           <button 
-            className={activeNavBar === GeneralConst.DASHBOARD ? "btn btn-active" : "btn"}
+            className={activeNavBar === GeneralConst.DASHBOARD ? "btn btn-active" : "btn btn-deactive"}
           >
             {GeneralConst.DASHBOARD}
           </button>
@@ -22,7 +22,7 @@ function Navbar({activeNavBar}) {
       </div>
         <Link to="/settings">
           <button 
-            className={activeNavBar === GeneralConst.SETTINGS ? "btn btn-active" : "btn"}
+            className={activeNavBar === GeneralConst.SETTINGS ? "btn btn-active" : "btn btn-deactive"}
           >
             {GeneralConst.SETTINGS}
           </button>
@@ -30,7 +30,7 @@ function Navbar({activeNavBar}) {
       <div>
         <Link to="/profile">
           <button 
-            className={activeNavBar === GeneralConst.PROFILE ? "btn btn-active" : "btn"}
+            className={activeNavBar === GeneralConst.PROFILE ? "btn btn-active" : "btn btn-deactive"}
           >
             {GeneralConst.PROFILE}
           </button>
@@ -39,7 +39,7 @@ function Navbar({activeNavBar}) {
       <div>
         {cookies['token'] !== undefined && (
           <button
-            className="btn"
+            className="btn btn-deactive"
             onClick={()=>context.handleLogout(cookies['token'])}
           >
             {GeneralConst.LOGOUT}

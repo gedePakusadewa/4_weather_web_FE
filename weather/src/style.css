@@ -15,6 +15,11 @@
 
 .btn-active{
     color: white !important;
+    font-weight: 600 !important;
+}
+
+.btn-deactive{
+    color: #a2a9c3 !important;
 }
 
 input{
@@ -58,13 +63,21 @@ input{
 }
 
 .btn-login{
-    border-radius: 8px;
-    background-color: #051538;
+    border-radius: 8px !important;
+    background-color: #051538 !important;
+    color: white !important;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 600 !important;
 }
 
 .btn-signup{
-    border-radius: 8px;
-    background-color: #C0BBB5;
+    border-radius: 8px !important;
+    background-color: #C0BBB5 !important;
+    color: white !important;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-weight: 600 !important;
 }
 
 .wrong-username-password{
@@ -138,12 +151,13 @@ input{
 
 @media only screen and (min-width: 768px) {
     .container-navbar{
-        margin: 40px;
-        padding: 20px;
+        margin: 40px 15px 40px 40px;
+        /* padding: 20px; */
+        padding: 10px 0 10px 0;
         border-radius: 20px;
         flex-direction: column;
-        width: 100px;
-        height: 29vh;
+        width: 140px;
+        height: 35vh;
     }
 }
 
@@ -303,7 +317,7 @@ select{
 }
 
 .today-container > div:nth-child(2) {
-    height: 25vh;   
+    height: 28vh;   
 }
 
 .today-container > div:first-child {
@@ -354,7 +368,7 @@ select{
 }
 
 .today-forecast-wrapper{
-    padding-left: 30px;
+    padding-left: 5px;
 }
 
 .today-forecast-wrapper > span:first-child {
@@ -407,6 +421,7 @@ select{
 
 .today-forecast-degree{
     font-weight: 550;
+    font-size: 12px;
 }
 
 .air-condition-icon-desc{
@@ -518,6 +533,18 @@ select{
     .dashboard-wait-container {
         margin-top: 100px;
         width: 100%;
+    }
+
+    .today-forecast-wrapper{
+        padding-left: 30px;
+    }
+
+    .today-container > div:nth-child(2) {
+        height: 30vh;   
+    }
+
+    .today-forecast-degree{
+        font-size: 15px;
     }
 }
 
