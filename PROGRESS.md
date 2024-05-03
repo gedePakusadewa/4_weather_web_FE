@@ -38,12 +38,18 @@
     - if user sign up, user can login but there is error in dashboard page
       - because new user does not have data in setting table that is used in dashboard
 
+### day 18
+- ~update constants in BE~
+- ~check impact from update constants BEin FE~
+- fix style in every page in desktop/mobile
+
 ### day 17
 - ~add loading in login~
 - ~add loading in dashbaord screen~
 - ~add loading setting~
 - ~add notification your update has been save~
-- 
+- ~add loading screen profile~
+- ~add loading update and notification update profile~
 
 ### day 16
 - ~add login as guest in BE and FE~

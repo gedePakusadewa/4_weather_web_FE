@@ -27,9 +27,9 @@ const AuthProvider = ({ children }) => {
         }
       }).then((res) => {
         setIsShowLogInButtons(true);
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       })
       .catch((err) => {
@@ -48,9 +48,9 @@ const AuthProvider = ({ children }) => {
       axios.post(UrlConst.SIGNUP, {
         username, password, email
       }).then((res) => {
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       })
       .catch((err) => {
@@ -89,9 +89,9 @@ const AuthProvider = ({ children }) => {
       })
       .then((res) => {
         setIsShowLogInButtons(true);
-        setToken(res.data.token);
+        setToken(res.data.Token);
         navigate('/');
-        setCookie('token', res.data.token, { path: '/' });
+        setCookie('token', res.data.Token, { path: '/' });
         setIsErrorInput(false)
       })
       .catch((err) => {

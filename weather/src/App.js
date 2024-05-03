@@ -11,6 +11,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.css';
 
 export const AuthContext = React.createContext(null);
 

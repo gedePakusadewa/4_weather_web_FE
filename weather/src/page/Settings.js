@@ -14,7 +14,6 @@ const Setting = () =>{
   const [isLoadingSave, setIsLoadingSave] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
 
-
   const [cookies, setCookie] = useCookies(['user']);
 
   useEffect(() => {

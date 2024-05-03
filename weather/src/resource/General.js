@@ -26,13 +26,20 @@ const General = {
     UNIT_FAHRENHEIT:"FAHRENHEIT",
     WRONG_INPUT_PROFILE:"Wrong format username or email!",
     BTN_UPDATE:"Update",
+    BTN_DELETE:"Delete",
+    BTN_CLOSE:"Close",
     LOGIN_AS_GUEST:"Log In As Guest (demo)",
     LOGIN_WAIT_MESSAGE: "Please wait while we are logging you in",
     DASHBOARD_WAIT_MESSAGE: "Please wait while we are sending you the data",
     WAIT_MESSAGE: "Please wait",
     SETTING_SAVE_WAIT_MESSAGE:"We are updating your settings, please wait",
     SETTING_SAVED_MESSAGE: "Settings has been updated.", 
-
+    PROFILE_SAVED_MESSAGE: "PROFILE has been updated.",
+    PROFILE_SAVE_WAIT_MESSAGE:"Updating your profile, please wait",
+    PROFILE_UPDATE_CITY:"Update City in settings menu.",
+    DELETE_ACCOUNT_CONFIRMATION_TITLE:"Delete Confirmation",
+    DELETE_ACCOUNT_CONFIRMATION_TEXT:"Are you sure delete this account {username}?",
+    DELETE_ACCOUNT_YES_BTN:"Yes, delete this account",
   };
   
   export default General
